@@ -1,0 +1,18 @@
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+</p>
+ 
+<p>
+  <strong>Artist_name:</strong>
+  <%= @album.artist_name %>
+</p>
+
+<h2>Songs</h2>
+<%= render @album.songs %>
+
+<h2>Add a song:</h2>
+<%= render 'songs/form' %>
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>

@@ -1,0 +1,33 @@
+<h2> All music file stored here</h2>
+ 
+ <table>
+  <tr>
+    <th>Songname</th>
+    <th>Title</th>
+    <th>singer</th> 
+    <th>Play</th>
+
+  </tr>
+ 
+  <% @songs.each do |song| %>
+    <tr>
+      <td><%= song.song_name%></td>
+      <td><%= song.album.title%></td>
+      <td><%= song.album.artist_name%></td>
+
+
+      <td><audio controls>
+      <source src=<%= song.file.url %> type="audio/ogg">
+      </audio></td>
+
+    </tr>
+  <% end %>
+
+</table>
+
+<%= will_paginate @songs, renderer: BootstrapPagination::Rails %>
+
+
+ <!--previous_label: "older", next_label: "newer", for replacing next & previous -->  
+
+<!--inner_window: 1, outer_window: 0 , for boing arrangement -->

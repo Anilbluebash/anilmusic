@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
-  get 'song/index'
 
-  
+  get 'categories/:id' , to: "categories#show", as: :categories_show
 
+  get "categories" , to: "categories#tags"
 
-    resources :songs, only: [:index]
+  get "songs" , to: "showcase#songs"
 
-    root 'home#index'
+  resources :albums do
+    resources :songs
+  end
+    
+  devise_for :users, :controllers => { registrations: 'registrations' }
+   
+  root 'homes#index'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

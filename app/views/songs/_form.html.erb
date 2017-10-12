@@ -1,0 +1,15 @@
+<%= form_with(model: [ @album, @album.songs.build ]) do |form| %>
+  <p>
+    <%= form.label :song_name %><br>
+    <%= form.text_field :song_name %>
+  </p>
+
+  <p>
+    <%= form.file_field :file %>
+  </p>
+
+  
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %> 

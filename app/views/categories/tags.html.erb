@@ -1,0 +1,19 @@
+<h2> All Album tags are stored here</h2>
+ 
+ <table>
+  <tr>
+    <th>Tags</th>
+  </tr>
+
+  <% @tags.each do |tag| %>
+    <tr>
+      <td><%= link_to tag.name, categories_show_path(tag)  %></td>
+    </tr>
+  <% end %>
+ 
+</table>
+
+
+
+
+
