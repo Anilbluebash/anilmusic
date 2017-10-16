@@ -6,11 +6,13 @@
   <body>
     <div class="container-fluid">
       <div class="row">            <!-- header section -->
-        <div class="col-12" style="height: 100px;">
+        <div class="col-12" style="height: 90px;">
           <div class="row">
-            <div class="col-2 " style="height: 100px;  background-image: url(/assets/logo.jpg")>
+            <div class="col-2 " style="height: 90px;  background-image: url(/assets/logo.jpg")>
             </div>             <!-- logo pik div -->
-             <div class="col-10" style="height: 100px; background-color: #A9A9A9">
+             <div class="col-10" style="height: 90px; background-color: #A9A9A9">
+             <%= link_to 'my_albums', albums_path, class: "btn pull-right btn btn-primary btn-md button"%>
+             
               <%= button_to 'logout',  destroy_user_session_path, method: :delete, class: "btn pull-right", style: "margin-top: 20px" %>
             </div>        
           </div>
@@ -20,7 +22,7 @@
       <div class="row">
         <div class="col-2" style=" background-color: #FF7F50">
         </div>
-        <div class="col-10" style=" background-color: #FFE4C4">
+        <div class="col-10">
           <div class="row">
             <div class="col-1"></div>
             <div class="col-9">
@@ -32,6 +34,7 @@
               <th>Title</th>
               <th>Artist_name</th>
               <th> Tags</th>
+              <th> Image</th>
             </tr>
            
             <% @albums.each do |album| %>
@@ -39,6 +42,8 @@
                 <td><%= album.title %></td>
                 <td><%= album.artist_name %></td>
                 <td><%=  album.tag_list %></td>
+                <td><%= image_tag album.image.url(:thumb) %></td>
+
                 <td><%= link_to 'Show', album_path(album) %></td>
                 <td><%= link_to 'Edit', edit_album_path(album) %></td>
                 <td><%= link_to 'Destroy', album_path(album),
@@ -53,7 +58,7 @@
           
         </div>
       </div>
-
+ 
     </div>
   </body>
 </html>

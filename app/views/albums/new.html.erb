@@ -1,6 +1,6 @@
 <h2> New Album</h2>
 
-<%= form_with scope: :album, url: albums_path,  local: true do |form| %>
+<%= form_with scope: :album, url: albums_path, html: { multipart: true } do |form| %>
 
 	<% if @album.errors.any? %>
     <div id="error_explanation">
@@ -30,7 +30,12 @@
     <%= form.label :tag_list, 'Tags (separated by commas)' %><br>
     <%= form.text_field :tag_list %>
   </p>
-
+  
+  <p>
+		<%= form.label :image %><br>
+		<%= form.file_field :image %>
+	</p>
+  
 	<p>
     <%= form.submit %>
   </p>
