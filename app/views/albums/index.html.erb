@@ -11,7 +11,7 @@
             <div class="col-2 " style="height: 90px; background-color: green">
             </div>             <!-- logo pik div -->
              <div class="col-10" style="height: 90px; background-color: #A9A9A9; ">
-             <%= link_to 'my_albums', albums_path, class: "btn pull-right btn btn-primary btn-md button"%>
+             <%= link_to 'my_albums', albums_path, class: "btn pull-right btn btn-primary btn-md button" %>
              
               <%= button_to 'logout',  destroy_user_session_path, method: :delete, class: "btn pull-right", style: "margin-top: 20px" %>
             </div>        
@@ -27,35 +27,33 @@
             <div class="col-1"></div>
             <div class="col-9">
               <h2>Listing albums</h2>
-   
-           <%= link_to 'New album', new_album_path %>
-          <table>
-            <tr>
-              <th>Title</th>
-              <th>Artist_name</th>
-              <th> Tags</th>
-              <th> Image</th>
-            </tr>
-           
-            <% @albums.each do |album| %>
-              <tr>
-                <td><%= album.title %></td>
-                <td><%= album.artist_name %></td>
-                <td><%=  album.tag_list %></td>
-                <td><%= image_tag album.image.url(:thumb) %></td>
+                <%= link_to 'New album', new_album_path %>
+                  <table>
+                      <tr>
+                        <th>Title</th>
+                        <th>Artist_name</th>
+                        <th> Tags</th>
+                        <th> Image</th>
+                      </tr>
+                    
+                    <% @albums.each do |album| %>
+                        <tr>
+                          <td><%= album.title %></td>
+                          <td><%= album.artist_name %></td>
+                          <td><%=  album.tag_list %></td>
+                          <td><%= image_tag album.image.url(:thumb) %></td>
 
-                <td><%= link_to 'Show', album_path(album) %></td>
-                <td><%= link_to 'Edit', edit_album_path(album) %></td>
-                <td><%= link_to 'Destroy', album_path(album),
-                        method: :delete,
-                        data: { confirm: 'Are you sure?' } %></td> 
-              </tr>
-            <% end %>
-          </table>
+                          <td><%= link_to 'Show', album_path(album) %></td>
+                          <td><%= link_to 'Edit', edit_album_path(album) %></td>
+                          <td><%= link_to 'Destroy', album_path(album),
+                                  method: :delete,
+                                  data: { confirm: 'Are you sure?' } %></td> 
+                        </tr>
+                      <% end %>
+                  </table>
             </div>
             <div class="col-2"></div>
           </div>
-          
         </div>
       </div>
  
@@ -63,3 +61,6 @@
   </body>
 </html>
 
+
+                     
+                      
