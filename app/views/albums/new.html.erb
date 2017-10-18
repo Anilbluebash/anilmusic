@@ -2,7 +2,7 @@
 
 <%= form_with scope: :album, url: albums_path, html: { multipart: true } do |form| %>
 
-	<% if @album.errors.any? %>
+  <% if @album.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@album.errors.count, "error") %> prohibited
@@ -16,15 +16,15 @@
     </div>
   <% end %>
 
-	<p>
-		<%= form.label :title %><br>
-		<%= form.text_field :title %>
-	</p>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
 
-	<p>
-		<%= form.label :artist_name %><br>
-		<%= form.text_field :artist_name %>
-	</p>
+  <p>
+    <%= form.label :artist_name %><br>
+    <%= form.text_field :artist_name %>
+  </p>
 
   <p>
     <%= form.label :tag_list, 'Tags (separated by commas)' %><br>
@@ -32,11 +32,11 @@
   </p>
   
   <p>
-		<%= form.label :image %><br>
-		<%= form.file_field :image %>
-	</p>
+    <%= form.label :image %><br>
+    <%= form.file_field :image %>
+  </p>
   
-	<p>
+  <p>
     <%= form.submit %>
   </p>
  <% end %>
