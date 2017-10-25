@@ -5,6 +5,7 @@ class AlbumsController < ApplicationController
  
  	def index
  		@albums = current_user.albums
+ 		@user = current_user
  	end
 
  	def edit
