@@ -54,9 +54,9 @@
 
   <div class="field">
     <%= f.label :language %><br>
-    <%= f.check_box_tag :language, "hindi" %> Hindi
-    <%= f.check_box_tag :language, "english" %> English
-    <%= f.check_box_tag :language, "punjabi" %> punjabi
+    <%= check_box_tag "language",  id: "hindi" %> Hindi
+    <%= check_box_tag "language",  id: "english" %> English
+    <%= check_box_tag "language",  id: "punjabi" %> Punjabi
   </div>
 
   <div class="actions">
