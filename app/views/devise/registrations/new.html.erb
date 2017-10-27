@@ -1,5 +1,4 @@
 <h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -54,9 +53,11 @@
 
   <div class="field">
     <%= f.label :language %><br>
-    <%= check_box_tag "language",  id: "hindi" %> Hindi
-    <%= check_box_tag "language",  id: "english" %> English
-    <%= check_box_tag "language",  id: "punjabi" %> Punjabi
+    <%= f.check_box "language",  id: "hindi" %> 
+    <%= f.label :hindi %>
+    <%= f.check_box "language",  id: "english" %> 
+    <%= f.label :hindi %>
+    
   </div>
 
   <div class="actions">
@@ -68,3 +69,4 @@
 <%= render "devise/shared/links" %>
 
 
+ 

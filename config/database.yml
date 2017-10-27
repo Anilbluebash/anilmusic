@@ -27,4 +27,4 @@ test:
 
 production:
   <<: *default
-  database: soundcloud_pro
+  database: soundcloud_dev
