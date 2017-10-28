@@ -68,7 +68,7 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                      <h4 class="modal-title" id="myModalLabel"></h4>
                     </div>
                     <div class="modal-body">
                       <h2>Sign up</h2>
@@ -154,7 +154,87 @@
                   <div class="col-4"></div>
                   <div class="col-4">
                     
-                    <%= link_to 'signup for free', new_user_registration_path, class: "btn btn-primary btn-sm", style: "margin-top: 15px;" %>
+                    <!--<%= link_to 'signup for free', new_user_registration_path, class: "btn btn-primary btn-sm", style: "margin-top: 15px;" %>-->
+
+
+                                    <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary btn-sm" style="margin-top: 20px;" data-toggle="modal" data-target="#myModal1">
+                signup for free
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel"></h4>
+                    </div>
+                    <div class="modal-body">
+                      <h2>Sign up</h2>
+              <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
+                
+                <div class="field">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :first_name %><br>
+                  <%= f.text_field :first_name %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :last_name %><br>
+                  <%= f.text_field :last_name %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :date_of_birth %><br>
+                  <%= f.date_field :date_of_birth %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :password %>
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "off" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :password_confirmation %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                </div>  
+
+                <div class="field">
+                  <%= f.label :gender %><br>
+                  <%= f.radio_button :gender, "male" %> Male
+                  <%= f.radio_button :gender, "female" %> Female
+                </div> 
+                
+                <div class="field">
+                  <%= f.label :language %><br>
+                  <%= f.check_box "language",  id: "hindi" %> 
+                  <%= f.label :hindi %>
+                  <%= f.check_box "language",  id: "english" %> 
+                  <%= f.label :english %>
+                </div>
+
+                <div class="actions">
+                  <%= f.submit "Sign up" %>
+                </div>
+
+              <% end %>
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
 
                   </div>
                   <div class="col-4"></div>
