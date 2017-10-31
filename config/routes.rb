@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get "categories" , to: "categories#tags"
 
-  get "songs" , to: "showcase#songs"
+  get "songs" , to: "showcase#songs"    # get 'name kuj b' , to: "contoller/action name"
 
   resources :albums do
     resources :songs
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   root 'homes#index'
 
-  
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
+
