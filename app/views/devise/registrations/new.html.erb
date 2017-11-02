@@ -23,19 +23,6 @@
     <%= f.date_field :date_of_birth %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>  
-
   <!--<div class="field">
    <%= f.label :gender %><br>
    <%= f.text_field :gender %>
@@ -58,8 +45,20 @@
     <%= f.label :hindi %>
     <%= f.check_box "language",  id: "english" %> 
     <%= f.label :hindi %>
-    
   </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>  
 
   <div class="actions">
     <%= f.submit "Sign up" %>

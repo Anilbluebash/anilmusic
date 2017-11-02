@@ -16,5 +16,5 @@ class User < ApplicationRecord
 		WelcomeMailer.welcome_send(self).deliver
 	  #redirect_to root_path, alert: "thanks for signup"
 	end
-  
+
   end

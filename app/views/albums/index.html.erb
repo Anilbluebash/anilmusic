@@ -25,7 +25,7 @@
           <table>
               <tr>
                 <th> Name:</th>
-                <td><%= current_user.first_name %></td>
+                <td><%= current_user.first_name %> <%= current_user.last_name %> </td>
               </tr>
               <tr>
                 <th> Email:</th>
@@ -39,8 +39,8 @@
                 <th> DOB:</th>
                 <td><%= current_user.date_of_birth %></td>
               </tr>
-              
           </table>
+          <%= link_to "Edit profile",  edit_user_registration_path %>
         </div>
 
         <div class="col-10">
